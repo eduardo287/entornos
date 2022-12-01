@@ -33,13 +33,16 @@ class Model{
         return $result;
     }
     public function login(){
-        $this->email = $this->email = $_POST['email'];
-        $this->pass = $this->pass = $_POST['pass'];
+        $this->email = $_POST['email'];
+        $this->pass = $_POST['pass'];
 
-        $consulta = $this->conn->prepare("SELECT * FROM usuario WHERE email = ? AND pass = ?");
+        $consulta = $this->conn->prepare("call login(?,?)");
         $consulta->bind_param("ss",$this->email,$this->pass);
-
-        return $consulta->get_result();
+        $consulta->execute();
+        $datos = $consulta->get_result();
+        if($datos->num_rows>0)
+            $_SESSION['usuario'] = mysqli_fetch_row($datos);
+        return $datos;
     }
     public function mostrar($categoria){
         $sql = "SELECT nombre_producto,precio,color,talla,marca FROM productos WHERE categoria = '$categoria'";
@@ -54,6 +57,21 @@ class Model{
             $this->datos["marca"][$i] = $fila[4];
             $i++;
         }
+        $consulta->close();
         return $this->datos;
+    }
+    public function update(){
+
+    }
+    public function create(){
+        if(!isset($_POST['clave']) && !isset($_POST['apellidoPat']) && !isset($_POST['apMat']) && !isset($_POST['email']) && !isset($_POST['pass'])){
+            throw new Exception("Debes llenar todos los campos");
+        }
+        $consulta = $this->conn->prepare("INSERT INTO productos(nombre_producto,marca,precio,color,talla,existencias) VALUES(?,?,?,?,?,?)");
+        $result = $consulta->bind_param("ssssss",$s);
+        $consulta->execute();
+
+        $consulta->close();
+        return $result;
     }
 }

@@ -1,20 +1,20 @@
 <?php
 include_once("modelo/Model.php");
+include_once("modelo/ModelProducto.php");
+require_once("vista/layouts/mensaje.php");
 
 class ModelController{
-    public $model = null;
 
     public static function index(){
         require_once("vista/index.php");
     }
     public static function registrarse(){
-    $model = new Model();
-
-    if($model->registrarUsuario()){
-        echo "Registro Exitoso";
-    }else{
-        throw new Exception("Correo ya registrado");
-    }
+        $model = new Model();
+        if($model->registrarUsuario()){
+            echo "Registro Exitoso";
+        }else{
+            throw new Exception("Correo ya registrado");
+        }
     }
     public static function formularioRegistro(){
         require_once("vista/FormularioVG.php");
@@ -25,6 +25,7 @@ class ModelController{
     public static function login(){
         $model = new Model();
         $model = $model->login();
+
         if($model->num_rows>0){
             header("location: index.php");
         }else{
@@ -52,5 +53,36 @@ class ModelController{
         $datos = $model->mostrar("chamarras");
 
         require_once("vista/Chamarras.php");
+    }
+    public static function cerrar(){
+        session_destroy();
+        header("location: index.php");
+    }
+    public static function agregarProduc(){
+        require_once("vista/registrarProducto.php");
+    }
+    public static function registrarProduct(){
+        $model = new ModelProducto();
+
+        if(!$model->create()){
+            mensaje("Producto no agregado");
+        }else{
+            mensaje("Producto Registrado","?m=agregarProduc");
+            require_once("vista/registrarProducto.php");
+        }
+    }
+    public static function eliminarProductoFormulario(){
+        require_once("vista/eliminarProducto.php");
+    }
+    public static function eliminarProducto(){
+        $model = new ModelProducto();
+
+        if($model->delete()){
+            mensaje("Producto eliminado");
+            require_once("vista/eliminarProducto.php");
+        }else{
+            mensaje("No se ha podido eliminar el producto");
+            require_once("vista/eliminarProducto.php");
+        }
     }
 }

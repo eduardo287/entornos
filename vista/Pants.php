@@ -23,87 +23,15 @@
 
 
 <section class="w-100">
-    <div class="row w-75 mx-auto" id="servicios-fila-1">       
-        <div class="col-lg-6 col-md-12 col-sm-12 d-flex justify-content-start my-5 icono-wrap">
-            <img class="imgCata" src="vista/IMGPG/ps2.webp" alt="desarrollo" >
-
-            <div>
-                <h3 class="fs-5 mt-4 px-4 pb-1"><?php echo $datos["nombre_producto"][0] ?>
-                </h3>
-                <p class="px-4"><?php echo $datos["marca"][0] ?><center> <p><?php echo "$".$datos["precio"][0] ?></p></center> </p>
-            </div>
-
-        </div>
-
-        <div class="col-lg-6 col-md-12 col-sm-12 d-flex justify-content-start  my-5 icono-wrap">
-            <img class="imgCata" src="vista/IMGPG/Ps1.webp" alt="concepto" >
-
-            <div>
-                <h3 class="fs-5 mt-4 px-4 pb-1 icono-wrap"><?php echo $datos["nombre_producto"][1] ?></h3>
-                <p class="px-4"><?php echo $datos["marca"][1] ?><center><p><?php echo "$".$datos["precio"][1] ?></p></center> </p>
-            </div>
-        </div>
-    </div>
     <div class="row w-75 mx-auto" id="servicios-fila-1">
-        <div class="col-lg-6 col-md-12 col-sm-12 d-flex justify-content-start my-5 icono-wrap">
-            <img class="imgCata" src="vista/IMGPG/Ps3.jpg" alt="desarrollo"  >
-
-            <div>
-                <h3 class="fs-5 mt-4 px-4 pb-1"><?php echo $datos["nombre_producto"][2] ?></h3>
-                <p class="px-4"><?php echo $datos["marca"][2] ?><center><p><?php echo "$".$datos["precio"][2] ?></p></center> </p>
+        <?php for($i=0;$i<count($datos['nombre_producto']);$i++){ ?>
+            <div class="col-lg-6 col-md-12 col-sm-12 d-flex justify-content-start my-5 icono-wrap">
+                <div>
+                    <h3 class="fs-5 mt-4 px-4 pb-1"><?php echo $datos["nombre_producto"][$i] ?></h3>
+                    <p class="px-4"><?php echo $datos["marca"][$i] ?> <center> <p><?php echo "$".$datos["precio"][$i] ?></p></center> </p>
+                </div>
             </div>
-
-        </div>
-
-        <div class="col-lg-6 col-md-12 col-sm-12 d-flex justify-content-start  my-5 icono-wrap">
-            <img class="imgCata" src="vista/IMGPG/Ps4.jpg" alt="concepto" >
-
-            <div>
-                <h3 class="fs-5 mt-4 px-4 pb-1 icono-wrap"><?php echo $datos["nombre_producto"][3] ?>
-                </h3>
-                <p class="px-4"><?php echo $datos["marca"][3] ?><center><p><?php echo "$".$datos["precio"][3] ?></p></center> </p>
-            </div>
-        </div>
-    </div>
-    <div class="row w-75 mx-auto" id="servicios-fila-1">
-        <div class="col-lg-6 col-md-12 col-sm-12 d-flex justify-content-start my-5 icono-wrap">
-            <img class="imgCata" src="vista/IMGPG/Ps5.jpg" alt="desarrollo"  >
-
-            <div>
-                <h3 class="fs-5 mt-4 px-4 pb-1"><?php echo $datos["nombre_producto"][4] ?></h3>
-                <p class="px-4"><?php echo $datos["marca"][4] ?><center><p><?php echo "$".$datos["precio"][4] ?></p></center> </p>
-            </div>
-
-        </div>
-
-        <div class="col-lg-6 col-md-12 col-sm-12 d-flex justify-content-start  my-5 icono-wrap">
-            <img class="imgCata" src="vista/IMGPG/ps6.jpg" alt="concepto" >
-
-            <div>
-                <h3 class="fs-5 mt-4 px-4 pb-1 icono-wrap"><?php echo $datos["nombre_producto"][5] ?></h3>
-                <p class="px-4"><?php echo $datos["marca"][5] ?><center><p><?php echo "$".$datos["precio"][5] ?></p></center> </p>
-            </div>
-        </div>
-    </div>
-
-    <div class="row w-75 mx-auto mb-5" id="servicios-fila-2">
-        <div class="col-lg-6 col-md-12 col-sm-12 d-flex justify-content-start  my-5 icono-wrap">
-            <img class="imgCata" src="vista/IMGPG/Ps7.webp" alt="comunicaciones" >
-
-            <div>
-                <h3 class="fs-5 mt-4 px-4 pb-1"><?php echo $datos["nombre_producto"][6] ?></h3>
-                <p class="px-4"><?php echo $datos["marca"][6] ?><center><p><?php echo "$".$datos["precio"][6] ?></p></center> </p>
-            </div>
-        </div>
-
-        <div class="col-lg-6 col-md-12 col-sm-12 d-flex justify-content-start my-5 icono-wrap">
-            <img class="imgCata" src="vista/IMGPG/Ps8.webp" alt="seo"  >
-
-            <div>
-                <h3 class="fs-5 mt-4 px-4 pb-1"><?php echo $datos["nombre_producto"][7] ?></h3>
-                <p class="px-4"><?php echo $datos["marca"][7] ?><center><p><?php echo "$".$datos["precio"][7] ?></p></center> </p>
-            </div>
-        </div>
+        <?php } ?>
     </div>
 </section>
 
