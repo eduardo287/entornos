@@ -1,0 +1,34 @@
+Body{
+	background-image: url(FOND.webp);
+}
+h1{color: white;}
+h3{color: white;}
+p{color: white;}
+
+.LOGVG{
+	width: 120px;
+	height: 100px;
+}
+.imgCata{
+  height: 240px;
+  width: 200px;
+}
+
+.ENC{ background-color: #000000;
+}
+
+/*=========================FOOTER================================*/
+
+footer {
+    background: #FA0644;
+    min-height: 50px;
+}
+footer p{
+    color:#f3f3f3;
+    text-align:center;
+}
+#iconos  i {
+    font-size: 26px;
+    padding: 0 8px;
+    color:#f3f3f3;
+}

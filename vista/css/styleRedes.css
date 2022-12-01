@@ -1,0 +1,58 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+	background-image: url(FOND.webp);
+
+}
+
+.FormRegistro{
+	align-items: center;
+	width: 1000px;
+	height: 800px;
+	background: #000000 ;
+	padding: 5px;
+	margin: auto;
+	margin-top: 100px;
+	border-radius: 4px;
+	font-family:calibri;
+	color: white;
+	box-shadow: 7px 13px 37px #00;
+
+}
+.titu{
+	font-size: 50px;
+	color: white;
+}
+.redes{
+	align-items: center;
+}
+.icono{
+	width: 50px; 
+	heigth: 30px;
+}
+.LOGV{
+	width:200px ;
+	height: 150px;
+}
+.BotonRedes{
+	display: block;
+	width: 600px;
+	height: 90px;
+	font-family: calibri;
+	font-weight: 1000;
+	background-color: #F60643;
+	border-radius: 10px;
+	padding: 1px 5px;
+	margin: 50px 20px;
+	color: rgb(10, 9, 9);
+	text-decoration: none;
+
+}
+.BotonRedes:hover {
+	background-color: whitesmoke;
+	border: 2px solid black;
+	color: black;
+}

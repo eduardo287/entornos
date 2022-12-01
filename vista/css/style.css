@@ -1,0 +1,64 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+	background-color: #0C0A0A;
+}
+.FormRegistro{
+	width: 400px;
+	background:#000000 ;
+	padding: 30px;
+	margin: auto;
+	margin-top: 100px;
+	border-radius: 4px;
+	font-family:calibri;
+	color: white;
+	box-shadow: 7px 13px 37px #00;
+
+
+}
+.FormRegistro h4 {
+   font-size: 22px;
+   margin-bottom: 20px;
+}
+.control{
+	width: 100%;
+	background:#000000 ;
+	padding: 5px;
+	border-radius: 4px;
+	margin-bottom: 16px;
+	border: 2px solid #FA0644  ;
+	font-family: 'calibri';
+	font-size: 18px;
+	color: white;
+
+}
+.FormRegistro p{
+	height: 40px;
+	text-align: center;
+	font-size:18px ;
+	line-height: 40px;
+
+}
+.FormRegistro a{
+	color: #FA0644;
+}
+.FormRegistro a:hover {
+	color: white;
+	text-decoration: underline;
+}
+.FormRegistro .botons {
+	width: 100%;
+	background: #FA0644;
+	border: none;
+	padding: 12px;
+	color: white;
+	margin: 16px 0;
+	font-size: 16px;
+}
+.LOGVG{
+	width: 85px;
+	height: 70px;
+}
