@@ -11,9 +11,9 @@ class ModelController{
     public static function registrarse(){
         $model = new Model();
         if($model->registrarUsuario()){
-            echo "Registro Exitoso";
+            mensaje("Registro Exitoso","?m=index");
         }else{
-            throw new Exception("Correo ya registrado");
+            mensaje("No se pudo registrar :(","?m=index");
         }
     }
     public static function formularioRegistro(){
