@@ -24,9 +24,8 @@ class ModelController{
     }
     public static function login(){
         $model = new Model();
-        $model = $model->login();
 
-        if($model){
+        if($model->login()){
             mensaje("Bienvenido ".$_SESSION['usuario'][1],"?m=index");
         }else{
             mensaje("Datos Incorrectos","?m=formularioLoguearse");
