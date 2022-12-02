@@ -5,7 +5,7 @@ class Database{
 
     public function __construct(){
         try{
-            $this->conn = new mysqli(host,user,password,dbname);
+            $this->conn = new mysqli(host,user,password,dbname,port);
 
             if($this->conn->connect_errno){
                 throw new Exception("Error en la conexion");
