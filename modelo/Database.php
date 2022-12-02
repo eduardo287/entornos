@@ -1,14 +1,11 @@
 <?php
+include_once("../config/config.php");
 class Database{
     public mysqli $conn;
-    public String $host = "localhost";
-    public String $pass = "";
-    public String $dbname = "vooghacs";
-    public String $user = "root";
 
     public function __construct(){
         try{
-            $this->conn = new mysqli($this->host,$this->user,$this->pass,$this->dbname);
+            $this->conn = new mysqli(host,dbname,password,dbname,port);
 
             if($this->conn->connect_errno){
                 throw new Exception("Error en la conexion");
