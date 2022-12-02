@@ -1,11 +1,11 @@
 <?php
-include_once("../config/config.php");
+include_once("config/config.php");
 class Database{
     public mysqli $conn;
 
     public function __construct(){
         try{
-            $this->conn = new mysqli(host,dbname,password,dbname,port);
+            $this->conn = new mysqli(host,user,password,dbname);
 
             if($this->conn->connect_errno){
                 throw new Exception("Error en la conexion");
