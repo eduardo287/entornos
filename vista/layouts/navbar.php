@@ -28,7 +28,7 @@
                       <a class="nav-link" aria-current="page" href="?m=eliminarProductoFormulario">Eliminar Producto</a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link" aria-current="page" href="?m=eliminarProductoFormulario">Eliminar Producto</a>
+                      <a class="nav-link" aria-current="page" href="?m=actualizarProductoFormulario">Actualizar Producto</a>
                   </li>
               </ul>
           </li>

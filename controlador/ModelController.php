@@ -26,30 +26,30 @@ class ModelController{
         $model = new Model();
         $model = $model->login();
 
-        if($model->num_rows>0){
-            header("location: index.php");
+        if($model){
+            mensaje("Bienvenido ".$_SESSION['usuario'][1],"?m=index");
         }else{
-            echo "Datos incorrectos";
+            mensaje("Datos Incorrectos","?m=formularioLoguearse");
         }
     }
     public static function sudaderas(){
-        $model = new Model();
+        $model = new ModelProducto();
         $datos = $model->mostrar("sudaderas");
         require_once("vista/sudaderas.php");
     }
     public static function playeras(){
-        $model = new Model();
+        $model = new ModelProducto();
         $datos = $model->mostrar("playeras");
         require_once("vista/playeras.php");
     }
     public static function pants(){
-        $model = new Model();
+        $model = new ModelProducto();
         $datos = $model->mostrar("pants");
         require_once("vista/Pants.php");
     }
     public static function chamarras()
     {
-        $model = new Model();
+        $model = new ModelProducto();
         $datos = $model->mostrar("chamarras");
 
         require_once("vista/Chamarras.php");
@@ -65,10 +65,9 @@ class ModelController{
         $model = new ModelProducto();
 
         if(!$model->create()){
-            mensaje("Producto no agregado");
+            mensaje("Producto no agregado","?m=agregarProduc");
         }else{
             mensaje("Producto Registrado","?m=agregarProduc");
-            require_once("vista/registrarProducto.php");
         }
     }
     public static function eliminarProductoFormulario(){
@@ -78,11 +77,20 @@ class ModelController{
         $model = new ModelProducto();
 
         if($model->delete()){
-            mensaje("Producto eliminado");
-            require_once("vista/eliminarProducto.php");
+            mensaje("Producto eliminado","?m=eliminarProductoFormulario");
         }else{
-            mensaje("No se ha podido eliminar el producto");
-            require_once("vista/eliminarProducto.php");
+            mensaje("No se ha podido eliminar el producto","?m=eliminarProductoFormulario");
+        }
+    }
+    public static function actualizarProductoFormulario(){
+        require_once("vista/actualizarProducto.php");
+    }
+    public static function actualizarProduct(){
+        $model = new ModelProducto();
+        if($model->update()){
+            mensaje("Producto Actualizado correctamente","?m=actualizarProductoFormulario");
+        }else{
+            mensaje("No se pudo Actualizar :(","?m=actualizarProductoFormulario");
         }
     }
 }
