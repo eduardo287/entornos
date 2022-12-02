@@ -38,7 +38,7 @@ class Model{
         return $result;
     }
     public function login(){
-        if(!isset($_POST['email']) && isset($_POST['pass'])){
+        if(!isset($_POST['email']) && !isset($_POST['pass'])){
             throw new Exception("Debes llenar todos los datos");
         }
         $this->email = $_POST['email'];
